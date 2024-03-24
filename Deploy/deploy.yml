@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flaskctn
-        image: gurmindersingh5/flask:v47
+        image: gurmindersingh5/flask:ver47
         ports:
         - containerPort: 8111
 
