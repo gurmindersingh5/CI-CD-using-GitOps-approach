@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ####################################
-# script tp install and configurin k8s using new repos from pkgs.k8s.io as of MARCH 2024
+# script to install and configurin k8s on master node using new repos from pkgs.k8s.io as of MARCH 2024
 ####################################
 
 sudo apt update && sudo apt upgrade -y
