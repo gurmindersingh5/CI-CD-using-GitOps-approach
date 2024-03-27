@@ -1,0 +1,2 @@
+#After installing k8s, run kubeadm init. Remove if files already exists and then run kubeadm reset and then run kubeadm init on master node.
+#Run commands asked my k8s after init and It will generate join command which needs to run on worker nodes in order to add them to this cluster.
