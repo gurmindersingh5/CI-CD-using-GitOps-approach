@@ -7,7 +7,7 @@
 sudo su 
 apt update && sudo apt upgrade -y
 
-apt install docker.io
+apt install docker.io -y
 systemctl start docker
 systemctl enable docker
 usermod -aG docker $USER
@@ -18,7 +18,7 @@ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --
 
 sudo su 
 apt update
-apt install kubeadm kubelet kubectl
+apt install kubeadm kubelet kubectl -y
 apt-mark hold kubelet kubeadm kubectl
 
 swapoff -a
