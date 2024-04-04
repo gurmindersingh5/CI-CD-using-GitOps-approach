@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flaskctn
-        image: gurmindersingh5/flaskapp_minikube_linux-arm64-v8:v2
+        image: gurmindersingh5/flask:ver69
         ports:
         - containerPort: 8000
 
