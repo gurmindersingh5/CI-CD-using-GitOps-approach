@@ -1,12 +1,11 @@
-#!/bin/bash
 
-###### NOT A SCRIPT ################
-####################################
-# script to install and configurin k8s on MASTER NODE using new repos from pkgs.k8s.io as of MARCH 2024
-####################################
+############################################################################################################
+# Date: MARCH 2024
+# STEPS to install and configurin k8s on MASTER NODE using new/latest repos from pkgs.k8s.io as old ones are depriciated
+# source:
+# https://www.linuxtechi.com/install-kubernetes-on-ubuntu-22-04/?unapproved=53072&moderation-hash=e2092ea8dd88b10870083b1ae3784777#comment-53072
+############################################################################################################
 
-source:
-https://www.linuxtechi.com/install-kubernetes-on-ubuntu-22-04/?unapproved=53072&moderation-hash=e2092ea8dd88b10870083b1ae3784777#comment-53072
 
 sudo apt update && sudo apt upgrade -y
 
