@@ -1,4 +1,4 @@
-# End-to-End CI/CD Pipeline with Jenkins, SonarQube, Argo CD, Helm, and Kubernetes
+## End-to-End CI/CD Pipeline with Jenkins, SonarQube, Argo CD, Helm, and Kubernetes
 
 This repository contains all the necessary configurations to set up an end-to-end CI/CD pipeline for a Python application. The pipeline is designed to automate the entire process, from code checkout to production deployment, using Jenkins, SonarQube, Argo CD, Helm, and Kubernetes.
 
@@ -23,11 +23,13 @@ Step 4: Commit to the GitHub repo, triggering the Jenkins pipeline. After a succ
 ### Setup Instructions
 Step 1: Install Jenkins Server and Set Up Webhooks with GitHub
 Install Jenkins:
-`sudo apt update
+```
+sudo apt update
 sudo apt install openjdk-11-jdk
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 sudo apt update
 sudo apt install jenkins
 sudo systemctl start jenkins
-sudo systemctl status jenkins`
+sudo systemctl status jenkins
+```
