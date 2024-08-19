@@ -21,7 +21,7 @@ Step 3: Install Kubernetes cluster with Argo CD operator. Create YAML files for 
 Step 4: Commit to the GitHub repo, triggering the Jenkins pipeline. After a successful build, it will update the manifests repo. Argo CD will automatically trigger on the commit and fetch the new image from the artifact repo.
 
 ### Setup Instructions
-Step 1: Install Jenkins Server and Set Up Webhooks with GitHub
+**Step 1**: Install Jenkins Server and Set Up Webhooks with GitHub
 Install Jenkins:
 ```
 sudo apt update
@@ -33,3 +33,47 @@ sudo apt install jenkins
 sudo systemctl start jenkins
 sudo systemctl status jenkins
 ```
+
+Set Up Webhooks in GitHub:
+Go to your GitHub repository.
+Navigate to Settings > Webhooks > Add Webhook.
+Set the payload URL to your Jenkins server's webhook URL: http://your-jenkins-server/github-webhook/.
+Choose application/json as the content type and make sure the webhook is set to trigger on push events.
+
+**Step 2**: Install Necessary Jenkins Plugins and Integrate SonarQube
+Install Jenkins Plugins:
+Navigate to Jenkins Dashboard > Manage Jenkins > Manage Plugins.
+Install the following plugins:
+GitHub Integration Plugin
+Docker Pipeline Plugin
+SonarQube Scanner Plugin
+Kubernetes Continuous Deploy Plugin
+Argo CD Plugin
+
+Configure SonarQube in Jenkins:
+Navigate to Jenkins Dashboard > Manage Jenkins > Configure System.
+In the SonarQube section, add a new SonarQube installation and provide the necessary details such as the server URL and authentication token.
+
+**Step 3**: Install Kubernetes Cluster with Argo CD Operator
+Install Argo CD on Your Kubernetes Cluster:
+```
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+Access Argo CD UI:
+```
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+Access the UI via https://localhost:8080.
+Create YAML Files for Kubernetes Components (deployment.yaml, service.yaml, argocd-app.yaml)
+
+**Step 4**: Commit to GitHub Repo and Trigger Jenkins Pipeline
+Create a Jenkins Pipeline
+
+Commit Changes to GitHub:
+Push your code and manifest changes to GitHub.
+Jenkins will automatically start the pipeline due to the webhook.
+
+Monitor Argo CD for Deployment:
+Argo CD will automatically detect the changes in the manifest repository and start deploying the updated image to your Kubernetes cluster.
+You can monitor the deployment process through the Argo CD UI.
